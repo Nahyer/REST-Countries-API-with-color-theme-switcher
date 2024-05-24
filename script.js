@@ -29,11 +29,20 @@ async function fetchCountries() {
     }
 }
 
+const regionFilter = document.querySelector('#region');
+regionFilter.addEventListener('change', handleRegionFilter);
 
+function handleRegionFilter() {
+    const selectedRegion = regionFilter.value;
+    console.log(selectedRegion);
+    filterCountriesByRegion(selectedRegion);
+}
 function filterCountriesByRegion(region) {
+    console.log(region);
     const countries = document.querySelectorAll('.country');
     countries.forEach(country => {
         const regionElement = country.querySelector('span[data-region]');
+        console.log(regionElement)
         const countryRegion = regionElement ? regionElement.textContent : null;
         if (region === 'Filter by Region' || countryRegion === region) {
             country.style.display = 'block';

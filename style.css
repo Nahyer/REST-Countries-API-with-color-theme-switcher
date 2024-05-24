@@ -76,11 +76,10 @@ select {
         flex-direction: row;
         flex-wrap: wrap;
        justify-content: space-between;
-       margin: 1rem 2rem;
+       /* margin: 1rem 2rem; */
     }
     .country {
-        /* width:25%; */
-        /* margin: 1rem ; */
+    width: 30%;
     }
    
 }
