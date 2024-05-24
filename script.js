@@ -46,9 +46,34 @@ function filterCountriesByRegion(region) {
 
 // Add event listener for dark mode toggle
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
+const cards = document.querySelectorAll('.country');
+const cont = document.querySelectorAll('.cont');
 darkModeToggle.addEventListener('click', toggleDarkMode);
 
 // Function to toggle dark mode
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
+    cards.forEach(card => {
+        card.classList.toggle('cdk');
+    });
+    cards.forEach(c => {
+        c.classList.toggle('cdk');
+    });
+}
+// Add event listener for search input
+const searchInput = document.querySelector('.input');
+searchInput.addEventListener('input', searchCountry);
+
+// Function to search for a country
+function searchCountry() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const countries = document.querySelectorAll('.country');
+    countries.forEach(country => {
+        const countryName = country.querySelector('h2').textContent.toLowerCase();
+        if (countryName.includes(searchTerm)) {
+            country.style.display = 'block';
+        } else {
+            country.style.display = 'none';
+        }
+    });
 }
