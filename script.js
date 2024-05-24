@@ -29,7 +29,7 @@ async function fetchCountries() {
     }
 }
 
-// Add event listener for region selection
+
 function filterCountriesByRegion(region) {
     const countries = document.querySelectorAll('.country');
     countries.forEach(country => {
